@@ -1,6 +1,6 @@
-import MovieCard from '../MovieCard';
+import MovieCard from '../MovieCard/MovieCard';
 
-function MovieList({ movies }) {
+export default function MovieList({ movies }) {
   return (
     <div className="movies" data-cy="movies-list">
       {movies.map(movie => (
@@ -10,4 +10,3 @@ function MovieList({ movies }) {
   );
 }
 
-export default MovieList;

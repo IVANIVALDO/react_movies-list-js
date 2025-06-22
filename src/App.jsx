@@ -1,17 +1,30 @@
-/* eslint-disable max-len */
+// src/App.js
+import React from 'react';
 import './App.scss';
-import moviesFromServer from './api/movies.json'; // <- Corrigido
+import { MovieList } from './components'; // import nomeado, certifique-se que 'components/index.js' exporta MovieList
 
-import { MovieList } from './components/MovieList';
+const moviesFromServer = [
+  {
+    imdbId: 'tt0111161',
+    title: 'The Shawshank Redemption',
+    year: 1994,
+    poster: 'https://example.com/shawshank.jpg',
+  },
+  {
+    imdbId: 'tt0068646',
+    title: 'The Godfather',
+    year: 1972,
+    poster: 'https://example.com/godfather.jpg',
+  },
+  // mais filmes...
+];
 
-export const App = () => (
-  <div className="page">
-    <div className="page-content">
+function App() {
+  return (
+    <div className="App">
       <MovieList movies={moviesFromServer} />
     </div>
+  );
+}
 
-    <div className="sidebar" data-cy="Sidebar">
-      Sidebar will be here
-    </div>
-  </div>
-);
+export default App;

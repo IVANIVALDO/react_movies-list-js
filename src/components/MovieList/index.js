@@ -1,1 +1,2 @@
-export * from './MovieList';
+// index.js
+export { MovieCard } from './MovieCard';
