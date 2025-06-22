@@ -1,7 +1,7 @@
 // src/App.js
 import React from 'react';
 import './App.scss';
-import { MovieList } from './components'; // import nomeado, certifique-se que 'components/index.js' exporta MovieList
+import MovieList from './components/MovieList/index.js';
 
 const moviesFromServer = [
   {
