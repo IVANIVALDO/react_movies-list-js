@@ -1,14 +1,16 @@
-// src/components/MovieCard.js
 import React from 'react';
 
-function MovieCard({ movie }) {
+export function MovieCard({ movie }) {
+  if (!movie) return null;
+
   return (
-    <div className="card" data-cy="movie-card">
-      <img src={movie.poster} alt={movie.title} data-cy="movie-poster" />
-      <h2 data-cy="movie-title">{movie.title}</h2>
-      <p data-cy="movie-year">{movie.year}</p>
+    <div data-testid="Movie">
+      <h2 data-testid="MovieTitle">{movie.title}</h2>
+      <img src={movie.posterUrl} alt={movie.title} />
+      <p>{movie.description}</p>
+      <a href={movie.imdbUrl} target="_blank" rel="noopener noreferrer">
+        IMDb
+      </a>
     </div>
   );
 }
-
-export default MovieCard;

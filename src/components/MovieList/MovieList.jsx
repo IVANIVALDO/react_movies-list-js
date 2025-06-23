@@ -1,13 +1,16 @@
-import MovieCard from '../MovieCard';
+import React from 'react';
+import { MovieCard } from '../MovieCard/MovieCard';
 
-function MovieList({ movies }) {
+export default function MovieList({ movies }) {
+  const sorted = [...movies].sort((a, b) => a.title.localeCompare(b.title));
+
   return (
-    <div className="movies" data-cy="movies-list">
-      {movies.map(movie => (
-        <MovieCard key={movie.imdbId} movie={movie} />
-      ))}
+    <div>
+      {movies.length === 0 ? (
+        <p>No movies found</p>
+      ) : (
+        sorted.map(movie => <MovieCard key={movie.imdbId} movie={movie} />)
+      )}
     </div>
   );
 }
-
-export default MovieList;
