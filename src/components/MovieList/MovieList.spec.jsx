@@ -8,6 +8,7 @@ describe('MovieList component', () => {
     render(<MovieList movies={movies} />);
 
     const movieCards = screen.getAllByTestId('Movie');
+
     expect(movieCards.length).toBe(movies.length);
   });
 
@@ -26,6 +27,7 @@ describe('MovieList component', () => {
     render(<MovieList movies={[]} />);
 
     const movieCards = screen.queryAllByTestId('Movie');
+
     expect(movieCards.length).toBe(0);
   });
 });

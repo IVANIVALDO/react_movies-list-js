@@ -26,11 +26,13 @@ describe('MovieCard component', () => {
 
   it('should have a link to IMDb page', () => {
     const link = screen.getByRole('link');
+
     expect(link).toHaveAttribute('href', movie.imdbUrl);
   });
 
   it('should have a movie poster', () => {
     const img = screen.getByRole('img');
+
     expect(img).toHaveAttribute('src', movie.posterUrl);
     expect(img).toHaveAttribute('alt', movie.title);
   });
